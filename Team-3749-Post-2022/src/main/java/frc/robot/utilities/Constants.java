@@ -56,19 +56,19 @@ public final class Constants {
     }
 
     public static final class Shooter{
-        public static final double lowerRPM = 150; 
-        public static final double upperRPM = 500;
+        public static final SmartData<Double> lowerRPM = new SmartData<>("lowerRPM", 150.0); 
+        public static final SmartData<Double> upperRPM = new SmartData<>("upperRPM", 500.0); 
         // 340 WORKED FOR 85
-        public static final double turretSpeed = 0.2;
+        public static final SmartData<Double> turretSpeed = new SmartData<>("turretSpeed", 0.2);
 
         public static final int turretMotor = 22;
         public static final int rightShooterMotor = 15;
         public static final int leftShooterMotor = 16;
 
         public static final double gearRatio = 12.0/775.0;
-        public static final double kP = 0.295;
-        public static final double kI = 1.0;
-        public static final double kD = 0.0;
+        public static final SmartData<Double> kP = new SmartData<>("Shooter kP", 0.295);
+        public static final SmartData<Double> kI = new SmartData<>("Shooter kI", 1.0);
+        public static final SmartData<Double> kD = new SmartData<>("Shooter kD", 0.0);
         public static final double shooterHeight = 0.8128;
         public static final double hubHeight = 2.64;
         public static final double limelightAngle = 50;
@@ -80,14 +80,14 @@ public final class Constants {
     } 
 
     public static final class Vision{
-        public static final double kVisionP = 0.1;
+        public static final SmartData<Double> kVisionP = new SmartData<>("Vision kP", 0.1);
         public static final double kVisionLimit = 0.5;
     }
   
     public static final class Intake {
         public static final int intakeMotor = 21;
         public static final int intakePiston = 1;
-        public static final double kIntakeSpeed = 0.8;
+        public static final SmartData<Double> kIntakeSpeed = new SmartData<>("Intake Speed", 0.8);
 
         public static enum SolenoidDirection {
             FORWARD, REVERSE, OFF, COMPRESSOR, TRIGGER
@@ -102,12 +102,12 @@ public final class Constants {
         public static final int shintakeFront = 23;
         public static final int shintakeBack = 24;
         public static final double kShintakeSpeed = 0.53;
-        public static final double kP = .0002;
-        public static final double kPlow = .0001;
-        public static final double kI = 0;
-        public static final double kD = 0;
+        public static final SmartData<Double> kP = new SmartData<>("Shintake kP", .0002);
+        public static final SmartData<Double> kPLow = new SmartData<>("Shintake kP (low)", .0001);
+        public static final SmartData<Double> kI = new SmartData<>("Shintake kI", 0.0);
+        public static final SmartData<Double> kD = new SmartData<>("Shintake kD", 0.0);
         // public static final double targetRPM = 2500;
-        public static final double targetRPM = 5500;
+        public static final SmartData<Double> targetRPM = new SmartData<>("Shintake Target RPM", 5500.0);
 
 
         public static enum BallColor {
