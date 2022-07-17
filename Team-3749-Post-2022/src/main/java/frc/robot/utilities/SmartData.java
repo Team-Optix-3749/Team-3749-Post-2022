@@ -4,6 +4,11 @@ import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.networktables.NetworkTableType;
 
+/***
+ * @author Rohan Juneja
+ * Stores data that can be seen/edited in Smart Dashboard
+ * @param <T> Type of data: Supported types include String, Double, and Boolean
+ */
 public class SmartData<T> {
     T defaultVal;
     NetworkTableEntry entry;
