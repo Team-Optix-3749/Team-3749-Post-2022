@@ -43,6 +43,9 @@ public class Robot extends LoggedRobot  {
   public void robotPeriodic() {
     m_robotContainer.updateOI();
     CommandScheduler.getInstance().run();
+
+    Logger.getInstance().recordOutput("SineWave",
+        Math.sin(Logger.getInstance().getTimestamp() / 2) * 10);
   }
 
   @Override

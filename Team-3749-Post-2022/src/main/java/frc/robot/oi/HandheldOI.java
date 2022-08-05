@@ -4,6 +4,9 @@
 
 package frc.robot.oi;
 
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj2.command.button.Button;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 
 /**
@@ -11,12 +14,12 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
  */
 public interface HandheldOI {
 
-  public default Trigger getRaiseElevatorButton() {
-    return new Trigger();
+  public default Button getRaiseElevatorButton() {
+    return new Button();
   }
 
-  public default Trigger getLowerElevatorButton() {
-    return new Trigger();
+  public default Button getLowerElevatorButton() {
+    return new Button();
   }
   
 }

@@ -43,6 +43,11 @@ public class ElevatorIONeo implements ElevatorIO {
   }
 
   @Override
+  public void setPercent(double percent) {
+    m_chain.set(percent);
+  }
+
+  @Override
   public void setBrakeMode(boolean enable) {
     m_chain.setIdleMode(enable ? IdleMode.kBrake : IdleMode.kCoast);
   }

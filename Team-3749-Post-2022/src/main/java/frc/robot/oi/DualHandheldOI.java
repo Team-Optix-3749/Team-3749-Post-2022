@@ -5,7 +5,9 @@
 package frc.robot.oi;
 
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
+import edu.wpi.first.wpilibj.XboxController.Button;
 
 /** Class for controlling the robot with two Xbox controllers. */
 public class DualHandheldOI implements HandheldOI {
@@ -18,12 +20,12 @@ public class DualHandheldOI implements HandheldOI {
   }
 
   @Override
-  public Trigger getRaiseElevatorButton() {
-    return new Trigger(operatorController::getAButton);
+  public JoystickButton getRaiseElevatorButton() {
+    return new JoystickButton(operatorController, Button.kA.value);
   }
 
   @Override
-  public Trigger getLowerElevatorButton() {
-    return new Trigger(operatorController::getBButton);
+  public JoystickButton getLowerElevatorButton() {
+    return new JoystickButton(operatorController, Button.kB.value);
   }
 }
