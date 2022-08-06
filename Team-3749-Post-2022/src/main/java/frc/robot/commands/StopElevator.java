@@ -17,7 +17,6 @@ public class StopElevator extends CommandBase  {
 
   @Override
   public void initialize() {
-    m_elevator.setPercent(0);
   }
 
   @Override

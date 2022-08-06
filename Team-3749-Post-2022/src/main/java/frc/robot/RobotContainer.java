@@ -38,7 +38,7 @@ public class RobotContainer {
   }
 
   public void updateOI() {
-    // CommandScheduler.getInstance().clearButtons();
+    CommandScheduler.getInstance().clearButtons();
 
     // JoystickButton A = new JoystickButton(m_pilot, Button.kA.value);
     // JoystickButton B = new JoystickButton(m_pilot, Button.kB.value);
