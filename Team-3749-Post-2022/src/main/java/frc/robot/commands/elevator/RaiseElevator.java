@@ -1,15 +1,15 @@
-package frc.robot.commands;
+package frc.robot.commands.elevator;
 
 import org.littletonrobotics.junction.Logger;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.elevator.Elevator;
 
-public class LowerElevator extends CommandBase  {
+public class RaiseElevator extends CommandBase  {
 
   private final Elevator m_elevator;
 
-  public LowerElevator( Elevator elevator ) {
+  public RaiseElevator( Elevator elevator ) {
     this.m_elevator = elevator;
 
     addRequirements(elevator);
@@ -21,9 +21,9 @@ public class LowerElevator extends CommandBase  {
 
   @Override
   public void execute() {
-    Logger.getInstance().recordOutput("ActiveCommands/LowerElevator", true);
+    Logger.getInstance().recordOutput("ActiveCommands/RaiseElevator", true);
 
-    m_elevator.setPercent(-.1);
+    m_elevator.setPercent(.1);
   }
 
   @Override
@@ -37,3 +37,4 @@ public class LowerElevator extends CommandBase  {
   }
 
 }
+
