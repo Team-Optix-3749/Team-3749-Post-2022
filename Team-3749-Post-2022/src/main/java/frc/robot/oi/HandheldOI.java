@@ -4,10 +4,7 @@
 
 package frc.robot.oi;
 
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.button.Button;
-import edu.wpi.first.wpilibj2.command.button.JoystickButton;
-import edu.wpi.first.wpilibj2.command.button.Trigger;
 
 /**
  * Interface for all driver and operator controls (either single or dual Xbox).
@@ -21,5 +18,20 @@ public interface HandheldOI {
   public default Button getLowerElevatorButton() {
     return new Button();
   }
-  
+
+  public default double getLeftX() {
+    return 0.0;
+  }
+
+  public default double getLeftY() {
+    return 0.0;
+  }
+
+  public default double getRightX() {
+    return 0.0;
+  }
+
+  public default double getRightY() {
+    return 0.0;
+  }
 }
