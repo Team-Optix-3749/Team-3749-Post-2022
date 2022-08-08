@@ -4,7 +4,6 @@
 
 package frc.robot;
 
-import frc.robot.utilities.*;
 import frc.robot.commands.drivetrain.TankDrive;
 import frc.robot.commands.elevator.*;
 import frc.robot.oi.HandheldOI;
@@ -52,8 +51,8 @@ public class RobotContainer {
 
     m_drivetrain.setDefaultCommand(
       new TankDrive(
-        m_drivetrain, handheldOI::getLeftX, handheldOI::getLeftY,
-        handheldOI::getRightX, handheldOI::getRightY));
+        m_drivetrain, handheldOI::getLeftY, handheldOI::getRightY)
+      );
   }
 
   public Command getAutonomousCommand() {

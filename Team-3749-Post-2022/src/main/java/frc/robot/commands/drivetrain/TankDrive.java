@@ -9,14 +9,12 @@ public class TankDrive extends CommandBase {
   
   private final Drivetrain m_drivetrain;
 
-  private final DoubleSupplier leftX, leftY, rightX, rightY;
+  private final DoubleSupplier leftY, rightY;
 
-  public TankDrive( Drivetrain drivetrain, DoubleSupplier leftX, DoubleSupplier leftY,
-      DoubleSupplier rightX, DoubleSupplier rightY ) {
+  public TankDrive( Drivetrain drivetrain, 
+      DoubleSupplier leftY, DoubleSupplier rightY ) {
 
-    this.leftX = leftX;
     this.leftY = leftY;
-    this.rightX = rightX;
     this.rightY = rightY;
 
     this.m_drivetrain = drivetrain;
