@@ -36,6 +36,8 @@ public class RobotContainer {
   }
 
   public void updateOI() {
+    if (!OISelector.didJoysticksChange()) return;
+
     CommandScheduler.getInstance().clearButtons();
 
     handheldOI = OISelector.findHandheldOI();
@@ -47,7 +49,6 @@ public class RobotContainer {
     handheldOI.getLowerElevatorButton()
       .whenHeld(new LowerElevator(m_elevator))
       .whenReleased(new StopElevator(m_elevator));
-    
 
     m_drivetrain.setDefaultCommand(
       new TankDrive(
