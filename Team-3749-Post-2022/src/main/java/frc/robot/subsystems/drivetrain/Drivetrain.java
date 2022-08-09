@@ -28,7 +28,7 @@ public class Drivetrain extends SubsystemBase {
   private final double maxVelocityMetersPerSec;
   private final double maxAccelerationMetersPerSecSq;
   private final double trackWidthMeters;
-  private final SmartData<Double> kP = new SmartData<Double>("kP", 0.0);
+  private final SmartData<Double> kP = new SmartData<Double>("kP", Constants.Auto.kPDriveVel);
   private final SmartData<Double> kI = new SmartData<Double>("kI", 0.0);
   private final SmartData<Double> kD = new SmartData<Double>("kD", 0.0);
   private final double leftKS;
