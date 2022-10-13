@@ -77,4 +77,7 @@ public interface DrivetrainIO {
     public default void resetPosition(double leftPosRad, double rightPosRad) {
     }
 
+    public default void setRaw(double leftPercent, double rightPercent) {
+    }
+
 }

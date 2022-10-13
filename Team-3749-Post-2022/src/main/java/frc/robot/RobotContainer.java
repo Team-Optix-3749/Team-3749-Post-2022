@@ -5,12 +5,10 @@
 package frc.robot;
 
 import frc.robot.commands.drivetrain.TankDrive;
-import frc.robot.commands.elevator.*;
 import frc.robot.oi.HandheldOI;
 import frc.robot.oi.OISelector;
 import frc.robot.subsystems.drivetrain.Drivetrain;
 import frc.robot.subsystems.drivetrain.DrivetrainIOTalonFX;
-import frc.robot.subsystems.elevator.*;
 
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -18,7 +16,7 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
 
 public class RobotContainer {
 
-  private final Elevator m_elevator;
+  // private final Elevator m_elevator;
 
   private final Drivetrain m_drivetrain;
 
@@ -30,7 +28,7 @@ public class RobotContainer {
 
     m_drivetrain = new Drivetrain(new DrivetrainIOTalonFX() {});
 
-    m_elevator = new Elevator(new ElevatorIONeo() {});
+    // m_elevator = new Elevator(new ElevatorIONeo() {});
 
     updateOI();
   }
@@ -42,13 +40,13 @@ public class RobotContainer {
 
     handheldOI = OISelector.findHandheldOI();
 
-    handheldOI.getRaiseElevatorButton()
-      .whenHeld(new RaiseElevator(m_elevator))
-      .whenReleased(new StopElevator(m_elevator));
+    // handheldOI.getRaiseElevatorButton()
+    //   .whenHeld(new RaiseElevator(m_elevator))
+    //   .whenReleased(new StopElevator(m_elevator));
       
-    handheldOI.getLowerElevatorButton()
-      .whenHeld(new LowerElevator(m_elevator))
-      .whenReleased(new StopElevator(m_elevator));
+    // handheldOI.getLowerElevatorButton()
+    //   .whenHeld(new LowerElevator(m_elevator))
+    //   .whenReleased(new StopElevator(m_elevator));
 
     m_drivetrain.setDefaultCommand(
       new TankDrive(

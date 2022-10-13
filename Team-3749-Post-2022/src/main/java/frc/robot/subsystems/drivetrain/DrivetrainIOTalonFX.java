@@ -24,6 +24,7 @@ public class DrivetrainIOTalonFX implements DrivetrainIO {
   private static final double radiansPerTick = (2.0 * Math.PI) / encoderTicksPerRev;
   private static final boolean reverseOutputLeft = false;
   private static final boolean reverseOutputRight = true;
+
   private static final boolean reverseSensorLeft = false;
   private static final boolean reverseSensorRight = false;
 
@@ -90,6 +91,7 @@ public class DrivetrainIOTalonFX implements DrivetrainIO {
   @Override
   public void setBrakeMode(boolean enable) {
     NeutralMode mode = enable ? NeutralMode.Brake : NeutralMode.Coast;
+    
     m_leftFront.setNeutralMode(mode);
     m_leftRear.setNeutralMode(mode);
     m_rightFront.setNeutralMode(mode);
@@ -104,5 +106,11 @@ public class DrivetrainIOTalonFX implements DrivetrainIO {
     m_rightFront.config_kP(0, kp);
     m_rightFront.config_kI(0, ki);
     m_rightFront.config_kD(0, kd);
+  }
+
+  @Override
+  public void setRaw(double leftPercent, double rightPercent) {
+    m_leftFront.set(leftPercent);
+    m_rightFront.set(rightPercent);
   }
 }

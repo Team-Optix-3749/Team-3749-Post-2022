@@ -29,7 +29,7 @@ public class TankDrive extends CommandBase {
 
   @Override
   public void execute() {
-    m_drivetrain.drivePercent(leftY.getAsDouble(), rightY.getAsDouble());
+    m_drivetrain.driveRaw(leftY.getAsDouble() * 0.5, rightY.getAsDouble() * 0.5);
   }
 
   @Override

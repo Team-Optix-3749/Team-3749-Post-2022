@@ -28,7 +28,8 @@ public class Drivetrain extends SubsystemBase {
   private final double maxVelocityMetersPerSec;
   private final double maxAccelerationMetersPerSecSq;
   private final double trackWidthMeters;
-  private final SmartData<Double> kP = new SmartData<Double>("kP", Constants.Auto.kPDriveVel);
+  private final SmartData<Double> kP = 
+    new SmartData<Double>("kP", Constants.Auto.kPDriveVel);
   private final SmartData<Double> kI = new SmartData<Double>("kI", 0.0);
   private final SmartData<Double> kD = new SmartData<Double>("kD", 0.0);
   private final double leftKS;
@@ -63,19 +64,19 @@ public class Drivetrain extends SubsystemBase {
   /** Creates a new DriveTrain. */
   public Drivetrain(DrivetrainIO io) {
     this.io = io;
-    wheelRadiusMeters = Units.inchesToMeters(3.0);
+    wheelRadiusMeters = Units.inchesToMeters(2.0);
     maxVelocityMetersPerSec = 1.0;
     maxAccelerationMetersPerSecSq = 1.0;
     trackWidthMeters = 1.0;
-    leftKS = 0.0;
-    leftKV = 0.0;
-    leftKA = 0.0;
-    rightKS = 0.0;
-    rightKV = 0.0;
-    rightKA = 0.0;
+    leftKS = Constants.Auto.ksVolts;
+    leftKV = Constants.Auto.kvVoltSecondsPerMeter;
+    leftKA = Constants.Auto.kaVoltSecondsSquaredPerMeter;
+    rightKS = Constants.Auto.ksVolts;
+    rightKV = Constants.Auto.kvVoltSecondsPerMeter;
+    rightKA = Constants.Auto.kaVoltSecondsSquaredPerMeter;
 
     io.setBrakeMode(true);
-    io.configurePID(kP.get(), kI.get(), kD.get());
+    io.configurePID(Constants.Auto.kPDriveVel, 0.0, 0.0);
     lastKP = kP.get();
     lastKI = kI.get();
     lastKD = kD.get();
@@ -120,6 +121,10 @@ public class Drivetrain extends SubsystemBase {
 
   public void driveVoltage(double leftVolts, double rightVolts) {
     io.setVoltage(leftVolts, rightVolts);
+  }
+
+  public void driveRaw(double leftPercent, double rightPercent) {
+    io.setRaw(leftPercent, rightPercent);
   }
 
   public void drivePercent(double leftPercent, double rightPercent) {
