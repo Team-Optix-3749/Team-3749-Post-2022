@@ -57,9 +57,6 @@ public class RobotContainer {
     m_shintake.setDefaultCommand(
       new Shintaking(m_shintake, m_shooter, Pilot, Operator, PiPOV)
     );
-    m_shooter.setDefaultCommand(
-      new Shooting(m_shooter, Pilot, Operator, OpPOV)
-    );
     m_intake.setDefaultCommand(
       new Intaking(m_intake, Pilot)
     );
