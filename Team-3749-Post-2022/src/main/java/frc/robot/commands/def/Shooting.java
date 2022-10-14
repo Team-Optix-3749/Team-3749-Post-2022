@@ -53,22 +53,24 @@ public class Shooting extends CommandBase {
       m_shooter.stopTurret();
 
     }
-
-    if (Operator.leftBumper().get()) {
-      m_shooter.resetTurret();
-
-    } else if (Pilot.getRightTrigger()) {
+    
+    // Op right trigger = SHOOT upper hub
+    if (Pilot.getRightTrigger()) {
       m_shooter.setRPM(Constants.Shooter.upperRPM);
-
+    
+    // Op left trigger = SHOOT lower hub 
     } else if (Operator.getLeftTrigger()) {
       m_shooter.setRPM(Constants.Shooter.lowerRPM);
-
+    
+    // Pilot left bumper = SHOOT lower hub
     } else if (Pilot.leftBumper().get()) {
       m_shooter.setRPM(Constants.Shooter.lowerRPM);
-
+    
+    // Op Dpad up = RUN shooter upper
     } else if (OpPOV.up().get()) {
       m_shooter.setRPM(Constants.Shooter.upperRPM);
-
+    
+    // Op Dpad down = RUN shooter lower
     } else if (OpPOV.down().get()) {
       m_shooter.setRPM(Constants.Shooter.lowerRPM);
       
