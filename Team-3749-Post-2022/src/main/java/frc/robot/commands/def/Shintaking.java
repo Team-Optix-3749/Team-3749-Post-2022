@@ -38,9 +38,9 @@ public class Shintaking extends CommandBase {
       m_shintake.setShintakePID();
 
       // Pilot right trigger = set shintake (upper hub)
-    } else if (Pilot.getRightTrigger()) {
+    } else if (Operator.getRightTrigger()) {
       if (m_shooter.getRPM() > Constants.Shooter.upperRPM) {
-        m_shintake.setShintake();
+        m_shintake.setShintakeFix();
       } else {
         m_shintake.stopShintake();
       }
@@ -48,7 +48,7 @@ public class Shintaking extends CommandBase {
       // Pilot left trigger = set shintake (lower hub)
     } else if (Operator.getLeftTrigger()) {
       if (m_shooter.getRPM() > Constants.Shooter.lowerRPM - 15) {
-        m_shintake.setShintake();
+        m_shintake.setShintakeFix();
       } else {
         m_shintake.stopShintake();
       }

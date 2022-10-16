@@ -51,9 +51,19 @@ public class Shintake extends SubsystemBase {
     m_shintakeFront.set(Constants.Shintake.kShintakeSpeed);
     m_shintakeBack.set(-Constants.Shintake.kShintakeSpeed);
   }
+  
+  public void holdShintakeFix() {
+    m_shintakeFront.set(-Constants.Shintake.kShintakeSpeed);
+    m_shintakeBack.set(-Constants.Shintake.kShintakeSpeed);
+  }
 
   public void setShintake() {
     m_shintakeFront.set(Constants.Shintake.kShintakeSpeed + 0.01);
+    m_shintakeBack.set(Constants.Shintake.kShintakeSpeed);
+  }
+
+  public void setShintakeFix() {
+    m_shintakeFront.set(-Constants.Shintake.kShintakeSpeed + 0.01);
     m_shintakeBack.set(Constants.Shintake.kShintakeSpeed);
   }
 

@@ -22,8 +22,8 @@ public class AutoIntake extends CommandBase {
 
     @Override
     public void execute() {
-        m_intake.setIntake();
-        m_shintake.holdShintake();
+        m_intake.setIntakeReverse();
+        m_shintake.holdShintakeFix();
     }
 
     @Override

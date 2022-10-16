@@ -31,7 +31,7 @@ public class AutoShootTimer extends CommandBase{
         // m_shooter.visionAlign();
         m_shooter.setRPM(Constants.Shooter.upperRPM + m_addRPM);
         
-        if (t.get() > 2.5) m_shintake.setShintake(0.015);
+        if (t.get() > 2.5) m_shintake.setShintakeFix();
 
     }
 

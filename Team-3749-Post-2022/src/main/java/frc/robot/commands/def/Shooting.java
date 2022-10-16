@@ -55,7 +55,7 @@ public class Shooting extends CommandBase {
     }
     
     // Op right trigger = SHOOT upper hub
-    if (Pilot.getRightTrigger()) {
+    if (Operator.getRightTrigger()) {
       m_shooter.setRPM(Constants.Shooter.upperRPM);
     
     // Op left trigger = SHOOT lower hub 

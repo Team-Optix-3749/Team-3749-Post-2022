@@ -22,6 +22,7 @@ public class Intake extends SubsystemBase {
 
   public Intake() {
     m_intakeMotor.setIdleMode(IdleMode.kBrake);
+    m_intakeMotor.setInverted(true);
     
   }
 

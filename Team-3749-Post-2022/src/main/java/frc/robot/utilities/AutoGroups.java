@@ -186,7 +186,7 @@ public class AutoGroups {
     }
 
     public final Command timerShoot() {
-        return null;
+        return new AutoShootTimer(m_shooter, m_shintake, 50);
     }
 
     public final Command getRaadwan() {
@@ -248,9 +248,15 @@ public class AutoGroups {
     }
 
     public final Command getTwoLA() {
-        return new SequentialCommandGroup(
+        return new SequentialCommandGroup(  
             intake("1-Intake", ""),
             getRamsete("1-ShootRound", "1-Intake"),
+            timerShoot());
+    }
+
+    public final Command getOneBatb() {
+        return new SequentialCommandGroup(
+            intake("1-ShootRoundOne"),
             timerShoot());
     }
 

@@ -10,6 +10,7 @@ import frc.robot.subsystems.*;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
+import frc.robot.utilities.AutoGroups;
 
 public class RobotContainer {
 
@@ -49,17 +50,13 @@ public class RobotContainer {
     Pilot.x().toggleWhenPressed(new InstantCommand(m_drivetrain::setBrake));
 
     m_drivetrain.setDefaultCommand(
-      new Driving(m_drivetrain, Pilot::getLeftY, Pilot::getRightX)
-    );
+        new Driving(m_drivetrain, Pilot::getLeftY, Pilot::getRightX));
     m_shooter.setDefaultCommand(
-      new Shooting(m_shooter, Pilot, Operator, OpPOV)
-    );
+        new Shooting(m_shooter, Pilot, Operator, OpPOV));
     m_shintake.setDefaultCommand(
-      new Shintaking(m_shintake, m_shooter, Pilot, Operator, PiPOV)
-    );
+        new Shintaking(m_shintake, m_shooter, Pilot, Operator, PiPOV));
     m_intake.setDefaultCommand(
-      new Intaking(m_intake, Pilot)
-    );
+        new Intaking(m_intake, Pilot));
 
   }
 
@@ -69,6 +66,9 @@ public class RobotContainer {
    * @return the command to run in autonomous
    */
   public Command getAutonomousCommand() {
-    return null;
+    AutoGroups autoGroup = new AutoGroups(m_drivetrain, m_intake, m_shooter, m_shintake);
+
+    m_drivetrain.setBrake();
+    return autoGroup.getOneBatb();
   }
 }
