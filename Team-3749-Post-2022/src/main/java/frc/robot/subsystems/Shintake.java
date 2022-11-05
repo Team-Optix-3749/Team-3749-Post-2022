@@ -24,6 +24,8 @@ public class Shintake extends SubsystemBase {
     m_shintakeFront.setIdleMode(IdleMode.kBrake);
     m_shintakeBack.setIdleMode(IdleMode.kBrake);
 
+    m_shintakeFront.setInverted(true);
+
     m_shintakeFrontEncoder = m_shintakeFront.getEncoder();
     m_shintakeFrontPIDController = m_shintakeFront.getPIDController();
     m_shintakeFrontPIDController.setFeedbackDevice(m_shintakeFrontEncoder);
@@ -48,7 +50,7 @@ public class Shintake extends SubsystemBase {
   }
 
   public void holdShintake() {
-    m_shintakeFront.set(Constants.Shintake.kShintakeSpeed);
+    m_shintakeFront.set(-Constants.Shintake.kShintakeSpeed);
     m_shintakeBack.set(-Constants.Shintake.kShintakeSpeed);
   }
   

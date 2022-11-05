@@ -31,9 +31,9 @@ public class Intaking extends CommandBase {
       m_intake.intakeFwd();
 
     // Pilot left trigger = outtake (setIntakeReverse & intakeFwd)
-    } else if (Pilot.getRightTrigger()) {
-      m_intake.setIntakeReverse();
-      m_intake.intakeFwd();
+    // } else if (Pilot.getRightTrigger()) {
+    //   m_intake.setIntakeReverse();
+    //   m_intake.intakeFwd();
 
     // Pilot right bumper = slow outtake (setIntakeHalfReverse & intakeFwd)
     } else if (Pilot.rightBumper().get()) {

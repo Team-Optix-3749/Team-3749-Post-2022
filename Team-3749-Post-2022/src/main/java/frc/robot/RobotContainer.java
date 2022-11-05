@@ -22,7 +22,7 @@ public class RobotContainer {
 
   private final Shintake m_shintake = new Shintake();
 
-  private final Elevator m_elevator = new Elevator();
+  // private final Elevator m_elevator = new Elevator();
 
   Xbox Pilot;
   Xbox Operator;
@@ -41,10 +41,10 @@ public class RobotContainer {
     PiPOV = new POV(new GenericHID(0));
     OpPOV = new POV(new GenericHID(1));
 
-    Pilot.y().whenPressed(new InstantCommand(m_elevator::rawClimbUp, m_elevator))
-        .whenReleased(new InstantCommand(m_elevator::stopClimb, m_elevator));
-    Pilot.b().whenPressed(new InstantCommand(m_elevator::rawClimbDown, m_elevator))
-        .whenReleased(new InstantCommand(m_elevator::stopClimb, m_elevator));
+    // Pilot.y().whenPressed(new InstantCommand(m_elevator::rawClimbUp, m_elevator))
+    //     .whenReleased(new InstantCommand(m_elevator::stopClimb, m_elevator));
+    // Pilot.b().whenPressed(new InstantCommand(m_elevator::rawClimbDown, m_elevator))
+    //     .whenReleased(new InstantCommand(m_elevator::stopClimb, m_elevator));
 
     Pilot.a().toggleWhenPressed(new InstantCommand(m_drivetrain::setCoast));
     Pilot.x().toggleWhenPressed(new InstantCommand(m_drivetrain::setBrake));

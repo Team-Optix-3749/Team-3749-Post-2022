@@ -23,7 +23,6 @@ public class Intake extends SubsystemBase {
   public Intake() {
     m_intakeMotor.setIdleMode(IdleMode.kBrake);
     m_intakeMotor.setInverted(true);
-    
   }
 
   @Override
@@ -32,7 +31,7 @@ public class Intake extends SubsystemBase {
   }
 
   public void setIntake() {
-    m_intakeMotor.set(Constants.Intake.kIntakeSpeed);
+    m_intakeMotor.set(-Constants.Intake.kIntakeSpeed);
   }
 
   public void setIntakeReverse() {

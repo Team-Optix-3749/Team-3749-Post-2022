@@ -66,8 +66,8 @@ public class Shintaking extends CommandBase {
       m_shintake.holdShintake();
 
       // Pilot left trigger = hold shintake (intake)
-    } else if (Pilot.getRightTrigger()) {
-      m_shintake.setShintakeReverse();
+    // } else if (Pilot.getRightTrigger()) {
+    //   m_shintake.setShintakeReverse();
 
       // Pilot left bumper = lower hub (setShintake)
     } else if (Pilot.leftBumper().get()) {

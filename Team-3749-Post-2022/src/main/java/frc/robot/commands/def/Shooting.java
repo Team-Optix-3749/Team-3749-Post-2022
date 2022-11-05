@@ -5,7 +5,6 @@ import frc.robot.utilities.Constants;
 import frc.robot.utilities.POV;
 import frc.robot.utilities.Xbox;
 
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
 public class Shooting extends CommandBase {
@@ -29,7 +28,6 @@ public class Shooting extends CommandBase {
   public void initialize() {
     m_shooter.stopMotor();
     m_shooter.stopTurret();
-    SmartDashboard.putNumber("TEST", 100);
   }
 
   @Override
@@ -55,8 +53,8 @@ public class Shooting extends CommandBase {
     }
     
     // Op right trigger = SHOOT upper hub
-    if (Operator.getRightTrigger()) {
-      m_shooter.setRPM(Constants.Shooter.upperRPM);
+    if (Pilot.getRightTrigger()) {
+      m_shooter.setRPM(450);
     
     // Op left trigger = SHOOT lower hub 
     } else if (Operator.getLeftTrigger()) {
