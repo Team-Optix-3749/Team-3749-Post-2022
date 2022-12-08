@@ -56,8 +56,8 @@ public final class Constants {
     }
 
     public static final class Shooter{
-        public static final SmartData<Double> lowerRPM = new SmartData<>("lowerRPM", 150.0); 
-        public static final SmartData<Double> upperRPM = new SmartData<>("upperRPM", 500.0); 
+        public static final SmartData<Double> lowerSpeed = new SmartData<>("lowerRPM", .15); 
+        public static final SmartData<Double> upperSpeed = new SmartData<>("upperRPM", .3); 
         // 340 WORKED FOR 85
         public static final SmartData<Double> turretSpeed = new SmartData<>("turretSpeed", 0.2);
 
